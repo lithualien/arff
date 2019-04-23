@@ -7,6 +7,7 @@ import weka.core.converters.ArffLoader;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -21,6 +22,7 @@ public class Data {
     private int i;
     private List<SaveDataToList> atrributes = new ArrayList<>();
     private boolean running = true;
+    private ArrayList<String> aList;
 
     private void setData(String fileName) {
         try {
@@ -31,6 +33,10 @@ public class Data {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void converToStringArray(String str) {
+        aList = new ArrayList<>(Arrays.asList(str.split(",")));
     }
 
     private String tail( File file ) {
@@ -59,8 +65,13 @@ public class Data {
             running = true;
             StringBuilder tempor = new StringBuilder();
 
+            for (SaveDataToList temp : data) {
+                tempor.append("\n").append(temp.getAttribute());
+            }
+            tempor.append("\n\n@data\n\n");
+
             for (i = 0; i < files.length - 1; i++) {
-                /*synchronized (syncObject) {
+                synchronized (syncObject) {
                     if (paused) {
                         try {
                             syncObject.wait();
@@ -69,27 +80,18 @@ public class Data {
                             exc.printStackTrace();
                         }
                     }
-                }*/
-                //setData(files[i].toString());
-                /*if (i == 0) {
-                    for (SaveDataToList temp : data) {
-                       tempor.append("\n").append(temp.getAttribute());
-                    }
-                    tempor.append("\n\n@data\n\n");
                 }
-                else {
-                    for (SaveDataToList temp : data) {
-                        tempor.append(this.data.get(0).value(temp.getPos())).append(" ");
-                    }
-                    tempor.append("\n");*/
-                    tail(files[i]);
+                converToStringArray(tail(files[i]));
+                for (SaveDataToList temp : data) {
+                    tempor.append(aList.get(temp.getPos())).append(" ");
+                }
+                tempor.append("\n");
 
-               /* }
                 if (stop) {
                     break;
-                }*/
+                }
             }
-            //fileManagement.writeToFile(tempor.toString());
+            fileManagement.writeToFile(tempor.toString());
             running = false;
         };
         executorService.submit(runnable);

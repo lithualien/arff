@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b45ab4cd-f9e2-4e36-87da-f21b3336a9e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/github/lithualien/arff/SaveDataToList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arff.iml" beforeDir="false" afterPath="$PROJECT_DIR$/arff.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/arff/com/github/lithualien/arff/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/arff/com/github/lithualien/arff/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/arff/com/github/lithualien/arff/Emotions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/arff/com/github/lithualien/gui/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/arff/com/github/lithualien/gui/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arff/output/arff.arff" beforeDir="false" afterPath="$PROJECT_DIR$/arff/output/arff.arff" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/github/lithualien/arff/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/github/lithualien/arff/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/github/lithualien/arff/Emotions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/github/lithualien/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/github/lithualien/gui/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,17 +32,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/github/lithualien/arff/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="52" column="72" selection-start-line="52" selection-start-column="72" selection-end-line="52" selection-end-column="72" />
+            <state relative-caret-position="269">
+              <caret line="86" column="17" lean-forward="true" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3602#3603#0" expanded="true" />
-                <element signature="e#3820#3821#0" expanded="true" />
-                <element signature="e#3908#3909#0" expanded="true" />
-                <element signature="e#3972#3973#0" expanded="true" />
-                <element signature="e#4027#4028#0" expanded="true" />
-                <element signature="e#4080#4081#0" expanded="true" />
-                <element signature="e#4145#4146#0" expanded="true" />
+                <element signature="e#1209#1210#0" expanded="true" />
+                <element signature="e#1280#1281#0" expanded="true" />
+                <element signature="e#3752#3753#0" expanded="true" />
+                <element signature="e#3781#3782#0" expanded="true" />
+                <element signature="e#3959#3960#0" expanded="true" />
+                <element signature="e#3999#4000#0" expanded="true" />
+                <element signature="e#4036#4037#0" expanded="true" />
+                <element signature="e#4087#4088#0" expanded="true" />
+                <element signature="e#4116#4117#0" expanded="true" />
+                <element signature="e#4151#4152#0" expanded="true" />
+                <element signature="e#4182#4183#0" expanded="true" />
+                <element signature="e#4206#4207#0" expanded="true" />
+                <element signature="e#4232#4233#0" expanded="true" />
+                <element signature="e#4259#4260#0" expanded="true" />
+                <element signature="e#4294#4295#0" expanded="true" />
+                <element signature="e#4324#4325#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -278,7 +278,7 @@
       <workItem from="1555874641109" duration="3329000" />
       <workItem from="1555924594045" duration="16168000" />
       <workItem from="1555948172747" duration="2376000" />
-      <workItem from="1555969257053" duration="22857000" />
+      <workItem from="1555969257053" duration="24224000" />
     </task>
     <task id="LOCAL-00001" summary="arff project started">
       <created>1555939078676</created>
@@ -298,7 +298,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44730000" />
+    <option name="totallyTimeSpent" value="46097000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -310,7 +310,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="72" y="36" width="1703" height="960" extended-state="0" />
+    <frame x="137" y="8" width="1703" height="960" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.31892878" />
@@ -524,17 +524,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/lithualien/arff/Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="52" column="72" selection-start-line="52" selection-start-column="72" selection-end-line="52" selection-end-column="72" />
+        <state relative-caret-position="269">
+          <caret line="86" column="17" lean-forward="true" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3602#3603#0" expanded="true" />
-            <element signature="e#3820#3821#0" expanded="true" />
-            <element signature="e#3908#3909#0" expanded="true" />
-            <element signature="e#3972#3973#0" expanded="true" />
-            <element signature="e#4027#4028#0" expanded="true" />
-            <element signature="e#4080#4081#0" expanded="true" />
-            <element signature="e#4145#4146#0" expanded="true" />
+            <element signature="e#1209#1210#0" expanded="true" />
+            <element signature="e#1280#1281#0" expanded="true" />
+            <element signature="e#3752#3753#0" expanded="true" />
+            <element signature="e#3781#3782#0" expanded="true" />
+            <element signature="e#3959#3960#0" expanded="true" />
+            <element signature="e#3999#4000#0" expanded="true" />
+            <element signature="e#4036#4037#0" expanded="true" />
+            <element signature="e#4087#4088#0" expanded="true" />
+            <element signature="e#4116#4117#0" expanded="true" />
+            <element signature="e#4151#4152#0" expanded="true" />
+            <element signature="e#4182#4183#0" expanded="true" />
+            <element signature="e#4206#4207#0" expanded="true" />
+            <element signature="e#4232#4233#0" expanded="true" />
+            <element signature="e#4259#4260#0" expanded="true" />
+            <element signature="e#4294#4295#0" expanded="true" />
+            <element signature="e#4324#4325#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,33 @@
+
+@attribute pcm_LOGenergy_sma_maxameandist numeric
+@attribute pcm_LOGenergy_sma_linregerrQ numeric
+@attribute pcm_LOGenergy_sma_qregc1 numeric
+@attribute pcm_LOGenergy_sma_qregc2 numeric
+@attribute pcm_LOGenergy_sma_variance numeric
+@attribute pcm_LOGenergy_sma_stddev numeric
+@attribute pcm_LOGenergy_sma_kurtosis numeric
+@attribute pcm_LOGenergy_sma_maxameandist numeric
+@attribute pcm_LOGenergy_sma_linregerrQ numeric
+@attribute pcm_LOGenergy_sma_qregc1 numeric
+@attribute pcm_LOGenergy_sma_qregc2 numeric
+@attribute pcm_LOGenergy_sma_variance numeric
+@attribute pcm_LOGenergy_sma_stddev numeric
+@attribute pcm_LOGenergy_sma_kurtosis numeric
+@attribute pcm_LOGenergy_sma_maxameandist numeric
+@attribute pcm_LOGenergy_sma_linregerrQ numeric
+@attribute pcm_LOGenergy_sma_qregc1 numeric
+@attribute pcm_LOGenergy_sma_qregc2 numeric
+@attribute pcm_LOGenergy_sma_variance numeric
+@attribute pcm_LOGenergy_sma_stddev numeric
+@attribute pcm_LOGenergy_sma_kurtosis numeric
+@attribute pcm_LOGenergy_sma_maxameandist numeric
+@attribute pcm_LOGenergy_sma_linregerrQ numeric
+@attribute pcm_LOGenergy_sma_qregc1 numeric
+@attribute pcm_LOGenergy_sma_qregc2 numeric
+@attribute pcm_LOGenergy_sma_variance numeric
+@attribute pcm_LOGenergy_sma_stddev numeric
+@attribute pcm_LOGenergy_sma_kurtosis numeric
+
+@data
+
+5.251836e+00 5.450870e+00 -3.123583e-04 6.622757e-02 5.509881e+00 2.347314e+00 2.326292e+00 5.251836e+00 5.450870e+00 -3.123583e-04 6.622757e-02 5.509881e+00 2.347314e+00 2.326292e+00 5.251836e+00 5.450870e+00 -3.123583e-04 6.622757e-02 5.509881e+00 2.347314e+00 2.326292e+00 5.251836e+00 5.450870e+00 -3.123583e-04 6.622757e-02 5.509881e+00 2.347314e+00 2.326292e+00 
