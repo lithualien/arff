@@ -30,6 +30,9 @@ public class GUI extends JFrame {
     private File file = new File("C:/Users/Admin/Desktop/arff/arff");
     private Data data = new Data();
     private boolean running = true;
+    private JLabel timer = new JLabel("00 : 00");
+    private long startTime, pauseStartTime;
+    private int min = 0, pauseDuration;
 
     // Progress bar
     private JProgressBar status = new JProgressBar();
@@ -51,6 +54,7 @@ public class GUI extends JFrame {
         setJButton();
         setJProgressBar();
         setJList();
+        setJLabel();
     }
 
     private void setMainPanel() {
@@ -73,6 +77,7 @@ public class GUI extends JFrame {
         mainPanel.add(listAttributes);
         mainPanel.add(listScroller);
         mainPanel.add(start);
+        mainPanel.add(timer);
     }
 
     private void setJTextField() {
@@ -98,7 +103,7 @@ public class GUI extends JFrame {
     }
 
     private void setJButton() {
-        selectDirectory.setBounds(330, 20, 130, 30); // setting up JButton properties.
+        selectDirectory.setBounds(330, 20, 130, 30);
         unpause.setBounds(320, 60, 140, 30);
         indication.setBounds(20, 60, 140, 30);
         pause.setBounds(170, 60, 140, 30);
@@ -115,8 +120,12 @@ public class GUI extends JFrame {
         listScroller.setBounds(20, 140, 440, 280);
     }
 
+    private void setJLabel() {
+        timer.setBounds(400, 430, 40, 30);
+    }
+
     private void setInputDirectory() {
-        selectDirectory.addActionListener(e -> // inputDirectory button action listener
+        selectDirectory.addActionListener(e ->
         {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setCurrentDirectory(file);
@@ -132,14 +141,14 @@ public class GUI extends JFrame {
     }
 
     private void setJProgressBar() {
-        status.setBounds(20, 430, 440, 30);
+        status.setBounds(20, 430, 370, 30);
     }
 
     private void setIndications() {
         indication.addActionListener(e ->
-        {
+        {   model.removeAllElements();
+            allAttributes.clear();
             allAttributes = data.getAttributes(file);
-            System.out.println(allAttributes.get(0).getAttribute());
             setAllAttributes();
         });
     }
@@ -163,15 +172,17 @@ public class GUI extends JFrame {
 
     private void setSosStop() {
         sosStop.addActionListener(e ->
-                data.stop()); running = false;
+                data.stop());
     }
 
     private void setStart() {
-        start.addActionListener(e ->{
+        start.addActionListener(e -> {
+            selectedAttributes.clear();
             getSelectedItems();
             data.getInstances(file, selectedAttributes);
-            createFirstThread();
             running = true;
+            startTime = System.nanoTime();
+            createFirstThread();
         });
 
     }
@@ -192,6 +203,7 @@ public class GUI extends JFrame {
             while(running) {
                 setProgressBar(data.maxFiles(), data.currentPos() + 1);
                 running = data.getRunning();
+                setTimer();
                 try {
                     Thread.sleep(100);
                 }
@@ -209,6 +221,25 @@ public class GUI extends JFrame {
             status.setValue(current);
         }
         catch (Exception e) { e.printStackTrace(); }
+    }
+
+
+    private void setTimer() {
+        if(data.getPause()) {
+
+
+        } else {
+            startTime += (data.getPauseEnd() - data.getStartTime());
+            long a = (System.nanoTime() - startTime) / 1000000000;
+            data.setToZero();
+            if(a % 60 == 0 && a > 0)
+            {
+                min++;
+                startTime = System.nanoTime();
+                timer.setText(String.format("%02d : %02d", min, a));
+            }
+            timer.setText(String.format("%02d : %02d", min, a));
+        }
     }
 
 

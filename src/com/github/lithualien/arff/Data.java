@@ -23,6 +23,7 @@ public class Data {
     private List<SaveDataToList> atrributes = new ArrayList<>();
     private boolean running = true;
     private ArrayList<String> aList;
+    private long startTime, pauseEnd;
 
     private void setData(String fileName) {
         try {
@@ -56,13 +57,15 @@ public class Data {
 
     public void getInstances(File folder, List<SaveDataToList> data) {
 
-        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        running = true;
+        stop = false;
+        ExecutorService executorService = Executors.newFixedThreadPool(1);
 
         Runnable runnable = () -> {
 
             files = fileManagement.getAllFiles(folder);
             fileManagement.setUpFile();
-            running = true;
+
             StringBuilder tempor = new StringBuilder();
 
             for (SaveDataToList temp : data) {
@@ -70,7 +73,7 @@ public class Data {
             }
             tempor.append("\n\n@data\n\n");
 
-            for (i = 0; i < files.length - 1; i++) {
+            for (i = 0; i < files.length; i++) {
                 synchronized (syncObject) {
                     if (paused) {
                         try {
@@ -90,11 +93,16 @@ public class Data {
                 if (stop) {
                     break;
                 }
+                if(i % 1000 == 0 || i == files.length - 1) {
+                    fileManagement.writeToFile(tempor.toString());
+                    tempor = new StringBuilder();
+                }
             }
-            fileManagement.writeToFile(tempor.toString());
             running = false;
         };
         executorService.submit(runnable);
+        executorService.shutdown();
+
     }
 
 
@@ -116,11 +124,13 @@ public class Data {
 
     public void pause() {
         paused = true;
+        startTime = System.nanoTime();
     }
 
     public void resumeJob() {
         synchronized(syncObject) {
             paused = false;
+            pauseEnd = System.nanoTime();
             syncObject.notify();
         }
     }
@@ -147,5 +157,22 @@ public class Data {
 
     public boolean getRunning() {
         return running;
+    }
+
+    public boolean getPause() {
+        return paused;
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public long getPauseEnd() {
+        return pauseEnd;
+    }
+
+    public void setToZero() {
+        startTime = 0;
+        pauseEnd = 0;
     }
 }
